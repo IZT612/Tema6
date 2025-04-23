@@ -18,11 +18,9 @@ public class Main {
 		double estaturaMedia = 0;
 		int cont = 0;
 		
-		try {
+		try (BufferedReader out = new BufferedReader(new FileReader("src\\parte1\\ejercicio3\\Alumnos"))){
 			
-			BufferedReader in = new BufferedReader(new FileReader("src\\parte1\\ejercicio3\\Alumnos"));
-			
-			linea = in.readLine();
+			linea = out.readLine();
 			
 			while (linea != null) {
 				todo = linea.split(" ");
@@ -36,7 +34,7 @@ public class Main {
 				
 				cont++;
 				
-				linea = in.readLine();			
+				linea = out.readLine();			
 			} 
 			 
 			System.out.println("Nombres: " + nombres);
